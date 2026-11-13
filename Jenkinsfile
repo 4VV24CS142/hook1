@@ -16,20 +16,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Checking Python application'
-                bat 'python -m py_compile app.py'
+                bat '"%PYTHON%" -m py_compile app.py'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Executing automated tests'
-                bat 'python -m unittest app'
+                bat '"%PYTHON%" -m unittest app'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'python app.py'
+                bat '"%PYTHON%" app.py'
             }
         }
     }

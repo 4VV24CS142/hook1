@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = 'C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+    }
+
     stages {
         stage('Checkout') {
             steps {
